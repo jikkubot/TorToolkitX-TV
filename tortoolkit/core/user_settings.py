@@ -20,7 +20,7 @@ from .database_handle import TorToolkitDB
 torlog = logging.getLogger(__name__)
 # logging.getLogger("telethon").setLevel(logging.DEBUG)
 
-TIMEOUT_SEC = 2
+TIMEOUT_SEC = 15
 
 # this file will contian all the handlers and code for settings
 # code can be more modular i think but not bothering now
