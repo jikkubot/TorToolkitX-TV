@@ -342,7 +342,7 @@ async def get_leech_choice(e, timestamp):
     defleech = get_val("DEFAULT_TIMEOUT")
 
     while not lis[0]:
-        if (time.time() - start) >= 2:  # TIMEOUT_SEC:
+        if (time.time() - start) >= 15:  # TIMEOUT_SEC:
 
             if defleech == "leech":
                 return "tg"
