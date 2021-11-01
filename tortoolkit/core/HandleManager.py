@@ -61,6 +61,13 @@ def add_handlers(bot: TelegramClient):
 
     bot.add_event_handler(
         handle_leech_command,
+        events.NewMessage(
+            pattern=command_process(get_command("LEECH")), chats=get_val("ALD_USR")
+        ),
+    )
+
+    bot.add_event_handler(
+        handle_leech_command,
         events.NewMessage(pattern=r"magnet\:\?xt\=urn\:btih\:([A-F\d]+)",
         chats=get_val("ALD_USR"))
     )
