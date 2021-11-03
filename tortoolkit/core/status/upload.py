@@ -78,7 +78,7 @@ class TGUploadTask(Status):
         self._current_file = str(name)
 
     async def create_message(self):
-        msg = "<b>📤 𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n🗃️ File Name:  <code>{}</code>\n".format(
+        msg = "<b>📤 𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n<b>🗃️ File Name:</b> <code>{}</code>\n".format(
             self._current_file
         )
         prg = 0
@@ -86,7 +86,7 @@ class TGUploadTask(Status):
             prg = self._uploaded_files/self._files
 
         except ZeroDivisionError:pass
-        msg += "<b>📡  Progress:</b> 【{}】 - {}%\n".format(
+        msg += "<b>📡  Progress:</b>【{}】-{}%\n".format(
             self.progress_bar(prg),
             prg*100
         )
