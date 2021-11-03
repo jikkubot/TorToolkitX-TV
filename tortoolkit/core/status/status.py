@@ -86,7 +86,7 @@ class QBTask(Status):
         msg += "<b>⏳ ETA:</b> {}\n".format(
             human_readable_timedelta(self._torrent.eta)
             )
-        msg += "<b>🌱 Seed:</b> {} | <b>Leech:</b> {}\n".format(
+        msg += "<b>🌱 Seed:</b> {} | <b>🐛 Leech:</b> {}\n".format(
             self._torrent.num_seeds,self._torrent.num_leechs
             )
         msg += "<b>\n💠 Using Engine:</b> <code>[ qBittorrent ]</code>"
