@@ -95,20 +95,13 @@ class QBTask(Status):
 
 
     async def get_state(self):
-        # stalled
+        #stalled
         if self._torrent.state == "stalledDL":
-            return "Torrent <code>{}</code> is stalled(waiting for connection) temporarily.".format(
-                self._torrent.name
-            )
-        # meta stage
+            return"<b>Torrent </b>\n<code>📂 {}</code>\nis stalled(waiting for connection 🚥) temporarily...".format(self._torrent.name)
+        #meta stage
         elif self._torrent.state == "metaDL":
-            return "Getting metadata for {} - {}".format(
-                self._torrent.name, datetime.now().strftime("%H:%M:%S")
-            )
-        elif (
-            self._torrent.state == "downloading"
-            or self._torrent.state.lower().endswith("dl")
-        ):
+            return  "Getting metadata for {} - {}".format(self._torrent.name,datetime.now().strftime("%H:%M:%S"))
+        elif self._torrent.state == "<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>" or self._torrent.state.lower().endswith("dl"):
             # kept for past ref
             return None
 
