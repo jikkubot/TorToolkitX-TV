@@ -86,11 +86,11 @@ class TGUploadTask(Status):
             prg = self._uploaded_files/self._files
 
         except ZeroDivisionError:pass
-        msg += "<b>├📡 Progress:</b> 【{}】-{}%\n".format(
+        msg += "<b>├📡 Progress:</b> 【{}】 - <code>{}</code>%\n".format(
             self.progress_bar(prg),
             prg*100
         )
-        msg += "<b>├📁 Files:</b> {} of {} done.\n".format(
+        msg += "<b>├📁 Files:</b> <code>{}</code> of <code>{}</code> done.\n".format(
             self._uploaded_files,
             self._files
         )
