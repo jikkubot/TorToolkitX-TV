@@ -68,7 +68,7 @@ class QBTask(Status):
         return self._omess.sender_id
 
     async def create_message(self):
-        msg = "<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n🗃️ File Name: <code>{}</code>\n".format(
+        msg = "<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n<b>🗃️ File Name:</b> <code>{}</code>\n".format(
             self._torrent.name
             )
         msg += "<b>\n🔻Down:</b> {} | <b>🔺Up:</b> {}\n".format(
@@ -232,7 +232,7 @@ class ARTask(Status):
             self._dl_file.download_speed_string(),
             self._dl_file.upload_speed_string()
             )
-        msg += "<b>📡 Progress:</b> 【{}】 - {}%\n".format(
+        msg += "<b>📡 Progress:</b>【{}】-{}%\n".format(
             self.progress_bar(self._dl_file.progress/100),
             round(self._dl_file.progress,2)
             )
@@ -243,7 +243,7 @@ class ARTask(Status):
         msg += "<b>⏳ ETA:</b> <b>{}</b>\n".format(
             self._dl_file.eta_string()
             )
-        msg += "<b>🌱 Connection: </b>{} <b>\n".format(
+        msg += "<b>🌱 Connection: {} </b>\n".format(
             self._dl_file.connections
             )
         msg += "<b>\n💠 Using Engine:</b> <code>[ Aria2 ]</code>"
