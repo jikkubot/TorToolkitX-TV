@@ -225,21 +225,28 @@ class ARTask(Status):
         except:
             pass
 
-        msg = "<b>Downloading:</b> <code>{}</code>\n".format(downloading_dir_name)
-        msg += "<b>Down:</b> {} <b>Up:</b> {}\n".format(
-            self._dl_file.download_speed_string(), self._dl_file.upload_speed_string()
-        )
-        msg += "<b>Progress:</b> {} - {}%\n".format(
-            self.progress_bar(self._dl_file.progress / 100),
-            round(self._dl_file.progress, 2),
-        )
-        msg += "<b>Downloaded:</b> {} of {}\n".format(
+        msg = "<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n<code>{}</code>\n".format(
+            downloading_dir_name
+            )
+        msg += "<b>🔻 Down:</b> {}| <b>🔺 Up:</b> {}\n".format(
+            self._dl_file.download_speed_string(),
+            self._dl_file.upload_speed_string()
+            )
+        msg += "<b>📡 Progress:</b> 【{}】 - {}%\n".format(
+            self.progress_bar(self._dl_file.progress/100),
+            round(self._dl_file.progress,2)
+            )
+        msg += "<b>🔮 Process:</b> {} <b>of</b> {}\n".format(
             human_readable_bytes(self._dl_file.completed_length),
-            human_readable_bytes(self._dl_file.total_length),
-        )
-        msg += "<b>ETA:</b> <b>{}</b>\n".format(self._dl_file.eta_string())
-        msg += "<b>Conns:</b>{} <b>\n".format(self._dl_file.connections)
-        msg += "<b>Using engine:</b> <code>Aria2 For DirectLinks</code>"
+            human_readable_bytes(self._dl_file.total_length)
+            )
+        msg += "<b>⏳ ETA:</b> <b>{}</b>\n".format(
+            self._dl_file.eta_string()
+            )
+        msg += "<b>🌱 Connection: </b>{} <b>\n".format(
+            self._dl_file.connections
+            )
+        msg += "<b>\n💠 Using Engine:</b> <code>[ Aria2 ]</code>"
 
         return msg
 
