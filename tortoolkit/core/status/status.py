@@ -71,22 +71,22 @@ class QBTask(Status):
         msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n\n<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
             self._torrent.name
             )
-        msg += "<b>\n├🔻Down:</b> {} | <b>🔺Up:</b> {}\n".format(
+        msg += "<b>\n├🔻Down:</b> <code>{}</code> | <b>🔺Up:</b> <code>{}</code>\n".format(
             human_readable_bytes(self._torrent.dlspeed,postfix="/s"),
             human_readable_bytes(self._torrent.upspeed,postfix="/s")
             )
-        msg += "<b>├📡 Progress:</b> 【{}】-{}%\n".format(
+        msg += "<b>├📡 Progress:</b> 【{}】- <code>{}</code>%\n".format(
             self.progress_bar(self._torrent.progress),
             round(self._torrent.progress*100,2)
             )
-        msg += "<b>├🔮 Process:</b> {} <b>of</b> {}\n".format(
+        msg += "<b>├🔮 Process:</b> <code>{}</code> <b>of</b> {}\n".format(
             human_readable_bytes(self._torrent.downloaded),
             human_readable_bytes(self._torrent.total_size)
             )
-        msg += "<b>├⏳ ETA:</b> {}\n".format(
+        msg += "<b>├⏳ ETA:</b> <code>{}</code>\n".format(
             human_readable_timedelta(self._torrent.eta)
             )
-        msg += "<b>├🌱 Seed:</b> {} | <b>🐛 Leech:</b> {}\n".format(
+        msg += "<b>├🌱 Seed:</b> <code>{}</code> | <b>🐛 Leech:</b> <code>{}</code>\n".format(
             self._torrent.num_seeds,self._torrent.num_leechs
             )
         msg += "<b>\n╰─「💠 Using Engine:</b> <code>[ qBittorrent ]</code>"
@@ -228,22 +228,22 @@ class ARTask(Status):
         msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n\n<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
             downloading_dir_name
             )
-        msg += "<b>├🔻 Down:</b> {}| <b>🔺 Up:</b> {}\n".format(
+        msg += "<b>├🔻 Down:</b> <code>{}</code>| <b>🔺 Up:</b> <code>{}</code>\n".format(
             self._dl_file.download_speed_string(),
             self._dl_file.upload_speed_string()
             )
-        msg += "<b>├📡 Progress:</b>【{}】-{}%\n".format(
+        msg += "<b>├📡 Progress:</b>【{}】- <code>{}</code>%\n".format(
             self.progress_bar(self._dl_file.progress/100),
             round(self._dl_file.progress,2)
             )
-        msg += "<b>├🔮 Process:</b> {} <b>of</b> {}\n".format(
+        msg += "<b>├🔮 Process:</b> <code>{}</code> <b>of</b> <code>{}</code>\n".format(
             human_readable_bytes(self._dl_file.completed_length),
             human_readable_bytes(self._dl_file.total_length)
             )
-        msg += "<b>├⏳ ETA:</b> <b>{}</b>\n".format(
+        msg += "<b>├⏳ ETA:</b> <code>{}</code>\n".format(
             self._dl_file.eta_string()
             )
-        msg += "<b>├🌱 Connection: {} </b>\n".format(
+        msg += "<b>├🌱 Connection:</b> <code>{}</code>\n".format(
             self._dl_file.connections
             )
         msg += "<b>\n╰─「💠 Using Engine:</b> <code>[ Aria2 ]</code>"
