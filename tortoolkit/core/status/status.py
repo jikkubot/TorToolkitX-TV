@@ -75,7 +75,7 @@ class QBTask(Status):
             human_readable_bytes(self._torrent.dlspeed,postfix="/s"),
             human_readable_bytes(self._torrent.upspeed,postfix="/s")
             )
-        msg += "<b>├📡 Progress:</b> 【{}】- <code>{}</code>%\n".format(
+        msg += "<b>├📡 Progress:</b> 【{}】 - <code>{}</code>%\n".format(
             self.progress_bar(self._torrent.progress),
             round(self._torrent.progress*100,2)
             )
@@ -232,7 +232,7 @@ class ARTask(Status):
             self._dl_file.download_speed_string(),
             self._dl_file.upload_speed_string()
             )
-        msg += "<b>├📡 Progress:</b>【{}】- <code>{}</code>%\n".format(
+        msg += "<b>├📡 Progress:</b>【{}】 - <code>{}</code>%\n".format(
             self.progress_bar(self._dl_file.progress/100),
             round(self._dl_file.progress,2)
             )
