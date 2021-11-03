@@ -68,28 +68,31 @@ class QBTask(Status):
         return self._omess.sender_id
 
     async def create_message(self):
-        msg = "<b>Downloading:</b> <code>{}</code>\n".format(self._torrent.name)
-        msg += "<b>Down:</b> {} <b>Up:</b> {}\n".format(
-            human_readable_bytes(self._torrent.dlspeed, postfix="/s"),
-            human_readable_bytes(self._torrent.upspeed, postfix="/s"),
-        )
-        msg += "<b>Progress:</b> {} - {}%\n".format(
+        msg = "<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n🗃️ File Name: <code>{}</code>\n".format(
+            self._torrent.name
+            )
+        msg += "<b>\n🔻Down:</b> {} | <b>🔺Up:</b> {}\n".format(
+            human_readable_bytes(self._torrent.dlspeed,postfix="/s"),
+            human_readable_bytes(self._torrent.upspeed,postfix="/s")
+            )
+        msg += "<b>📡 Progress:</b>【{}】-{}%\n".format(
             self.progress_bar(self._torrent.progress),
-            round(self._torrent.progress * 100, 2),
-        )
-        msg += "<b>Downloaded:</b> {} of {}\n".format(
+            round(self._torrent.progress*100,2)
+            )
+        msg += "<b>🔮 Process:</b> {} <b>of</b> {}\n".format(
             human_readable_bytes(self._torrent.downloaded),
-            human_readable_bytes(self._torrent.total_size),
-        )
-        msg += "<b>ETA:</b> <b>{}</b>\n".format(
+            human_readable_bytes(self._torrent.total_size)
+            )
+        msg += "<b>⏳ ETA:</b> {}\n".format(
             human_readable_timedelta(self._torrent.eta)
-        )
-        msg += "<b>S:</b>{} <b>L:</b>{}\n".format(
-            self._torrent.num_seeds, self._torrent.num_leechs
-        )
-        msg += "<b>Using engine:</b> <code>qBittorrent</code>"
+            )
+        msg += "<b>🌱 Seed:</b> {} | <b>Leech:</b> {}\n".format(
+            self._torrent.num_seeds,self._torrent.num_leechs
+            )
+        msg += "<b>\n💠 Using Engine:</b> <code>[ qBittorrent ]</code>"
 
         return msg
+
 
     async def get_state(self):
         # stalled
