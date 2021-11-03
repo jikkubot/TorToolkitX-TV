@@ -225,7 +225,7 @@ class ARTask(Status):
         except:
             pass
 
-        msg = "<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n<code>{}</code>\n".format(
+        msg = "<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠</b>\n\n<b>🗃️ File Name:</b> <code>{}</code>\n".format(
             downloading_dir_name
             )
         msg += "<b>🔻 Down:</b> {}| <b>🔺 Up:</b> {}\n".format(
