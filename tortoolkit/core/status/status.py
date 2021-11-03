@@ -71,8 +71,8 @@ class QBTask(Status):
         msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n\n<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
             self._torrent.name
             )
-        msg += "<b>├</b>\n"
-        msg += "<b>\n├🔻Down:</b> <code>{}</code> | <b>🔺Up:</b> <code>{}</code>\n".format(
+        msg += "<b>│</b>\n"
+        msg += "<b>├🔻Down:</b> <code>{}</code> | <b>🔺Up:</b> <code>{}</code>\n".format(
             human_readable_bytes(self._torrent.dlspeed,postfix="/s"),
             human_readable_bytes(self._torrent.upspeed,postfix="/s")
             )
@@ -90,8 +90,8 @@ class QBTask(Status):
         msg += "<b>├🌱 Seed:</b> <code>{}</code> | <b>🐛 Leech:</b> <code>{}</code>\n".format(
             self._torrent.num_seeds,self._torrent.num_leechs
             )
-        msg += "<b>├</b>\n"
-        msg += "<b>\n╰─「💠 Using Engine:</b> <code>[ qBittorrent ]</code>"
+        msg += "<b>│</b>\n"
+        msg += "<b>╰─「💠 Using Engine:</b> <code>[ qBittorrent ]</code>"
 
         return msg
 
@@ -230,7 +230,7 @@ class ARTask(Status):
         msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n\n<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
             downloading_dir_name
             )
-        msg += "<b>├</b>\n"
+        msg += "<b>│</b>\n"
         msg += "<b>├🔻 Down:</b> <code>{}</code>| <b>🔺 Up:</b> <code>{}</code>\n".format(
             self._dl_file.download_speed_string(),
             self._dl_file.upload_speed_string()
@@ -249,8 +249,8 @@ class ARTask(Status):
         msg += "<b>├🌱 Connection:</b> <code>{}</code>\n".format(
             self._dl_file.connections
             )
-        msg += "<b>├</b>\n"
-        msg += "<b>\n╰─「💠 Using Engine:</b> <code>[ Aria2 ]</code>"
+        msg += "<b>│</b>\n"
+        msg += "<b>╰─「💠 Using Engine:</b> <code>[ Aria2 ]</code>"
 
         return msg
 
