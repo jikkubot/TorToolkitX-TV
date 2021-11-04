@@ -68,7 +68,9 @@ class QBTask(Status):
         return self._omess.sender_id
 
     async def create_message(self):
-        msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n\n<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
+        msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n"
+        msg += "<b>│</b>\n"
+        msg += "<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
             self._torrent.name
             )
         msg += "<b>│</b>\n"
@@ -227,8 +229,10 @@ class ARTask(Status):
         except:
             pass
 
-        msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n\n<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
-            downloading_dir_name
+        msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n"
+        msg += "<b>│</b>\n"
+        msg += "<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
+            self._torrent.name
             )
         msg += "<b>│</b>\n"
         msg += "<b>├🔻 Down:</b> <code>{}</code>| <b>🔺 Up:</b> <code>{}</code>\n".format(
