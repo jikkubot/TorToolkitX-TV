@@ -71,7 +71,7 @@ class QBTask(Status):
         msg = "<b>╭───────「📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 」</b>\n"
         msg += "<b>│</b>\n"
         msg += "<b>├🗃️ File Name:</b> <code>{}</code>\n".format(
-            self._torrent.name
+            downloading_dir_name
             )
         msg += "<b>│</b>\n"
         msg += "<b>├🔻Down:</b> <code>{}</code> | <b>🔺Up:</b> <code>{}</code>\n".format(
